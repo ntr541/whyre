@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - CORNELIUS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Welcome to the CORNELIUS Gallery!</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="about.html"><i class="fas fa-users"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>    
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h2>Welcome to CORNELIUS Memories</h2>
+        <p>This website is dedicated to all our wonderful family moments.</p>        
+        <blockquote><em>“ I AM WHO I AM.”</em></blockquote>
+
+      </div>
+    </section>
+    <section class="surprise-section">
+      <h2>Click for a Surprise! 🍌</h2>
+      <button onclick="showBanana()">💃 !!!!!!!</button>
+      <div id="banana-container"></div>
+    </section>
+    
+    <section class="container">
+      <h2>Family Hall of Fame</h2>
+      <ul>
+        <li><strong>Master of the Remote:</strong> CORNELIUS – undefeated since 2002.</li>
+        <li><strong>Snack Ninja:</strong> KIBET – can open a bag of chips silently.</li>
+        <li><strong>Serial Photo Bomber:</strong>  – never misses a moment.</li>
+        <li><strong>Queen of “I Told You So”:</strong> – and she’s always right.</li>
+      </ul>
+    </section>
+    <section class="birthday-section">
+      <h2>🎉 Happy Birthday, CORNELIUS 🎂</h2>
+      <p>Wishing you lots of love, laughter, and cake on your special day!</p>
+      <img src="2025-05-25 194420.png" alt="Birthday Cake" class="birthday-cake">
+      <p>From all of us – we love you! 💖</p>
+    </section>
+    <section class="surprise-section">
+      <h2>Click for a Surprise! 🎁</h2>
+      <button onclick="showSurprise()">🎉 Surprise Me!</button>
+      <div id="confetti"></div>
+    </section>
+    
+    
+    
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Family Website. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Simple confetti-like effect
+    const colors = ["#ff4081", "#ffc107", "#8bc34a", "#00bcd4", "#e91e63"];
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement("div");
+      confetti.style.width = "10px";
+      confetti.style.height = "10px";
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.position = "absolute";
+      confetti.style.top = Math.random() * window.innerHeight + "px";
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+      confetti.style.borderRadius = "50%";
+      document.body.appendChild(confetti);
+    }
+  </script>
+  
+  <style>
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  </style>
+  <script>
+    function showSurprise() {
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti-dot");
+        confetti.style.backgroundColor = randomColor();
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.top = Math.random() * 10 + "px";
+        confetti.style.animationDuration = Math.random() * 2 + 1 + "s";
+        document.body.appendChild(confetti);
+  
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }
+      alert("🎊 Surprise! You're awesome!");
+    }
+  
+    function randomColor() {
+      const colors = ["#ff4081", "#00bcd4", "#ffc107", "#8bc34a", "#e91e63"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+  <script>
+  function showFunnyGif() {
+    const container = document.getElementById("gif-container");
+    const img = document.createElement("img");
+    img.src = "https://tenor.com/view/grinch-and-max-gif-741930103513765500"; // Replace with your file name
+    img.alt = "Funny Surprise";
+    img.className = "funny-gif";
+    container.innerHTML = "https://tenor.com/view/grinch-and-max-gif-741930103513765500"; // Clear previous GIF
+    container.appendChild(img);
+    alert("😂 Surprise delivered!");
+  }
+</script>
+
+  
+  
+  
+</body>
+</html>
